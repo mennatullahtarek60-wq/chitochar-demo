@@ -81,7 +81,7 @@ crop_data = {
     "Banana": {
         "sensitivity": "High", "suitable": "✅ Yes",
         "rt_normal": 5, "rt_chito": 10, "rt_risk": 85,
-        "cold_normal": 18, "cold_chito": 24, "cold_risk": 30,  # Treated as 13°C ideal baseline
+        "cold_normal": 18, "cold_chito": 24, "cold_risk": 30,
         "optimal_temp": 13, "reduction": 65, "saved_kg_per_ton": 143,
         "price_per_kg": 15, "sachets_per_ton": 75, "co2_factor": 0.8
     },
@@ -133,7 +133,7 @@ st.sidebar.warning(f"💡 **Recommendation:** Deploy **{sachet_needed} Sachets**
 if selected_crop == "Banana" and storage_temp < 10:
     st.sidebar.error("⚠️ **Critical Warning:** Temperatures below 10°C trigger **Chilling Injury** in bananas. Maintain optimal transit at 13°C.")
 elif storage_temp > 26:
-    st.sidebar.error(f"⚠️ **High Spoilage Alert:** Elevated thermal environment accelerates sudden ethylene release surges.")
+    st.sidebar.error("⚠️ **High Spoilage Alert:** Elevated thermal environment accelerates sudden ethylene release surges.")
 else:
     st.sidebar.success(f"💎 **Storage Tip:** Maintain target temperature close to {c_meta['optimal_temp']}°C for maximum lifespan expansion.")
 
@@ -221,7 +221,7 @@ with tab1:
     st.subheader("💰 ChitoChar ROI Calculator")
     saved_kg = c_meta["saved_kg_per_ton"] * shipment_volume
     gross_savings = saved_kg * c_meta["price_per_kg"]
-    total_sachet_cost = sachet_needed * 2  # 2 EGP per sachet custom baseline
+    total_sachet_cost = sachet_needed * 2  
     net_profit = gross_savings - total_sachet_cost
     
     f_col1, f_col2, f_col3, f_col4 = st.columns(4)
@@ -357,4 +357,4 @@ with tab4:
         Our startup is tackling one of the most critical challenges in global food systems: post-harvest food loss. Every year, a significant percentage of fresh fruits and vegetables are lost before reaching consumers due to rapid ripening, spoilage, and inefficient preservation methods. We are addressing this challenge through an innovative, sustainable, and science-driven solution that extends the shelf life of fresh produce while reducing environmental impact.
         \nOur core innovation is a low-cost, eco-friendly active preservation sachet developed from bio-based and waste-derived materials. Unlike conventional preservation methods, our sachets do not come into direct contact with food. Instead, they are placed inside packaging or storage environments where they absorb ripening-related gases, helping slow the deterioration process and maintain product quality for longer periods. This provides a safer, more sustainable, and more affordable alternative to many imported chemical-based preservation solutions currently used in the market.
         \nThe technology has already demonstrated strong results in laboratory testing. In one of our key trials, we successfully extended the shelf life of tomatoes from 6 days to 19 days at room temperature, highlighting the potential of the solution to significantly reduce food waste across the supply chain. Beyond tomatoes, the technology is designed to be adaptable for a wide range of fruits and vegetables, including highly perishable crops.
-        \nWhat makes our solution unique
+        \nWhat makes our solution uniquely sustainable is its end-of-life cycle. Unlike many conventional pre
