@@ -12,10 +12,10 @@ st.markdown("""
     .sub-title { font-size:18px; color:#4C9A2A; text-align:center; margin-bottom:30px; }
     .metric-box { background-color:#F4F9F4; padding:15px; border-radius:10px; text-align:center; border: 1px solid #E0EFE0; }
     </style>
-""", unsafe_allowed_html=True)
+""", unsafe_allow_html=True)
 
-st.markdown('<div class="main-title">🌱 ChitoChar - المنصة الرقمية الذكية</div>', unsafe_allowed_html=True)
-st.markdown('<div class="sub-title">تحويل الهدر الغذائي إلى حلول مستدامة ودعم الأمن الغذائي</div>', unsafe_allowed_html=True)
+st.markdown('<div class="main-title">🌱 ChitoChar - المنصة الرقمية الذكية</div>', unsafe_allow_html=True)
+st.markdown('<div class="sub-title">تحويل الهدر الغذائي إلى حلول مستدامة ودعم الأمن الغذائي</div>', unsafe_allow_html=True)
 
 # القائمة الجانبية للمدخلات (Sidebar Inputs)
 st.sidebar.header("📥 مدخلات المستثمر / المزارع")
@@ -60,11 +60,11 @@ st.subheader(f"📊 نتائج التحليل الديناميكي لـ {quantit
 
 col1, col2, col3 = st.columns(3)
 with col1:
-    st.markdown(f'<div class="metric-box"><h4>💰 العائد المالي الموفر</h4><h2>{financial_roi:,.0f} ج.م</h2><p>تم حمايتها من الخسارة المباشرة</p></div>', unsafe_allowed_html=True)
+    st.markdown(f'<div class="metric-box"><h4>💰 العائد المالي الموفر</h4><h2>{financial_roi:,.0f} ج.م</h2><p>تم حمايتها من الخسارة المباشرة</p></div>', unsafe_allow_html=True)
 with col2:
-    st.markdown(f'<div class="metric-box"><h4>🍅 كمية المحصول المنقذة</h4><h2>{total_saved_kg:,.0f} كجم</h2><p>من أصل {quantity*1000:,.0f} كجم مخزن</p></div>', unsafe_allowed_html=True)
+    st.markdown(f'<div class="metric-box"><h4>🍅 كمية المحصول المنقذة</h4><h2>{total_saved_kg:,.0f} كجم</h2><p>من أصل {quantity*1000:,.0f} كجم مخزن</p></div>', unsafe_allow_html=True)
 with col3:
-    st.markdown(f'<div class="metric-box"><h4>📉 نسبة تقليل الهدر</h4><h2>{current_data["reduction"]*100:.0f}%</h2><p>بناءً على تقارير الفقد المحلية</p></div>', unsafe_allowed_html=True)
+    st.markdown(f'<div class="metric-box"><h4>📉 نسبة تقليل الهدر</h4><h2>{current_data["reduction"]*100:.0f}%</h2><p>بناءً على تقارير الفقد المحلية</p></div>', unsafe_allow_html=True)
 
 st.write("---")
 
@@ -88,9 +88,8 @@ with col_left:
 
 with col_right:
     st.subheader("🌍 الأثر البيئي والاستدامة (Circular Economy)")
-    st.info(f"**📉 تقليل انبعاثات الكربون:** منع تلف هذه الكمية يمنع انبعاث ما يعادل **{total_co2_saved:,.1f} كجم من غاز $CO_2$.**")
+    st.info(f"**📉 تقليل انبعاثات الكربون:** منع تلف هذه الكمية يمنع انبعاث ما يعادل **{total_co2_saved:,.1f} كجم من غاز CO2.**")
     st.success(f"**🌱 كربون مردود للتربة:** بعد فتح الأظرف واستخدامها، ستعيدين **{organic_carbon:,.1f} كجم من الكربون العضوي النقي** لتحسين جودة التربة كسماد طبيعي.")
 
 st.write("---")
 st.caption("ChitoChar App • الفائز بالمركز الثالث في Falling Walls Lab Cairo • رؤية مستدامة لعام 2027")
-  
