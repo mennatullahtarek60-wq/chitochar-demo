@@ -7,7 +7,7 @@ st.set_page_config(page_title="ChitoChar AI Platform", page_icon="🌱", layout=
 # Inject Custom Elegant Fonts and Styling (Emerald Sustainable Theme)
 st.markdown("""
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght=300;400;600;700&display=swap');
     
     * { font-family: 'Inter', sans-serif; }
     
@@ -69,7 +69,7 @@ st.write("---")
 st.image("hero_banner.png.jpg", use_container_width=True)
 st.write(" ")
 
-# --- DATA GENERATION ENGINE (PHYSIOLOGY MATRIX) ---
+# --- DATA GENERATION ENGINE ---
 crop_data = {
     "Tomato": {
         "sensitivity": "Medium", "suitable": "✅ Yes",
@@ -232,7 +232,7 @@ with tab1:
     
     st.write("---")
     
-    # Climate & Carbon Methane Focused Card
+    # Climate & Carbon Metrics
     st.subheader("🌍 Atmospheric & Climate Impact Metrics")
     co2_avoided = c_meta["co2_factor"] * saved_kg
     trees_equivalent = round(co2_avoided / 22)
@@ -256,16 +256,10 @@ with tab2:
     c_col1, c_col2 = st.columns(2)
     with c_col1:
         st.metric("Biochar Returned to Soil Bed", f"{biochar_returned:,.1f} kg")
-        st.write("""
-        **🔄 Regenerative Cycle Action:** After finishing its active post-harvest protective function, the sachet matrix is designed to be opened. 
-        Instead of joining typical commercial solid waste streams, the spent carbon core is applied directly into crop beds.
-        """)
+        st.write("**🔄 Regenerative Cycle Action:** After finishing its active post-harvest protective function, the sachet matrix is designed to be opened. Instead of joining typical commercial solid waste streams, the spent carbon core is applied directly into crop beds.")
     with c_col2:
         st.metric("Pure Organic Carbon Sequestered", f"{pure_carbon_returned:,.1f} kg")
-        st.write("""
-        **🌱 Subsurface Quality Enhancements:** The applied carbon structures function as permanent soil sponges—retaining moisture fields, 
-        locking essential mineral nutrients, stopping dangerous fertilizer chemical leaching, and elevating natural yield indexes over long horizons.
-        """)
+        st.write("**🌱 Subsurface Quality Enhancements:** The applied carbon structures function as permanent soil sponges—retaining moisture fields, locking essential mineral nutrients, stopping dangerous fertilizer chemical leaching, and elevating natural yield indexes over long horizons.")
         
     st.write("---")
     st.subheader("🌱 ChitoChar Grow: Pre-Harvest Innovation Matrix")
@@ -297,64 +291,28 @@ with tab4:
     st.markdown("*Transforming agricultural waste into smart solutions for food preservation and sustainable agriculture.*")
     
     with st.expander("🌿 ChitoChar Preserve (Smart Biochar Sachets for Post-Harvest Protection)"):
-        st.write("""
-        ChitoChar Preserve is a biochar-based active packaging solution designed to help reduce post-harvest losses in fruits and vegetables.
-        The sachets are placed inside storage boxes, packaging, or transportation containers, where they help manage ripening-related gases that accelerate spoilage. This helps maintain freshness for longer periods, reduce food losses, and improve produce quality during storage and transportation.
-        \n**Key Benefits:**
-        * ✔ Helps extend produce freshness and shelf life
-        * ✔ Reduces post-harvest losses
-        * ✔ No direct food contact
-        * ✔ Low-cost and easy to use
-        * ✔ Made from agricultural waste
-        * ✔ Suitable for tomatoes, bananas, mangoes, and other climacteric crops
-        \n*♻️ After use, the biochar content can be safely incorporated into soil, helping improve soil quality and supporting a circular agricultural system.*
-        """)
+        st.write("ChitoChar Preserve is a biochar-based active packaging solution designed to help reduce post-harvest losses in fruits and vegetables. The sachets are placed inside storage boxes, packaging, or transportation containers, where they help manage ripening-related gases that accelerate spoilage. This helps maintain freshness for longer periods, reduce food losses, and improve produce quality during storage and transportation.")
+        st.write("**Key Benefits:**\n* ✔ Helps extend produce freshness and shelf life\n* ✔ Reduces post-harvest losses\n* ✔ No direct food contact\n* ✔ Low-cost and easy to use\n* ✔ Made from agricultural waste\n* ✔ Suitable for tomatoes, bananas, mangoes, and other climacteric crops")
+        st.caption("*♻️ After use, the biochar content can be safely incorporated into soil, helping improve soil quality and supporting a circular agricultural system.*")
         
     with st.expander("📦 ChitoChar Shield (Active Biochar Carton Liners - Future Product)"):
-        st.write("""
-        ChitoChar Shield is an advanced active-packaging solution currently under development, designed for highly perishable fruits and vegetables that require enhanced protection during storage and transportation.
-        The carton liners are manufactured from biochar and chitosan-based materials, combining gas-management capabilities with natural antimicrobial properties. They are designed to help slow quality deterioration, reduce spoilage, and maintain freshness throughout the supply chain.
-        \n**Key Benefits:**
-        * ✔ Helps extend shelf life of highly perishable produce
-        * ✔ Reduces spoilage during transportation and storage
-        * ✔ Natural antimicrobial properties
-        * ✔ Helps manage ripening-related gases
-        * ✔ Suitable for export packaging and sensitive fruits
-        * ✔ Sustainable alternative to conventional packaging materials
-        \n*Target Applications: berries, grapes, strawberries, fresh-cut produce, and other highly perishable fruits and vegetables.*
-        """)
+        st.write("ChitoChar Shield is an advanced active-packaging solution currently under development, designed for highly perishable fruits and vegetables that require enhanced protection during storage and transportation. The carton liners are manufactured from biochar and chitosan-based materials, combining gas-management capabilities with natural antimicrobial properties.")
+        st.write("**Key Benefits:**\n* ✔ Helps extend shelf life of highly perishable produce\n* ✔ Reduces spoilage during transportation and storage\n* ✔ Natural antimicrobial properties\n* ✔ Adaptable for export packaging\n* Target Applications: berries, grapes, strawberries, fresh-cut produce.")
         
     with st.expander("🌱 ChitoChar Grow (Sustainable Soil Amendment for Pre-Harvest Improvement)"):
-        st.write("""
-        ChitoChar Grow is a soil-enhancement solution developed from recycled bio-based materials and nutrient-rich agricultural residues.
-        It is designed to improve soil quality, support plant growth, enhance crop resilience, and improve fruit quality before harvest.
-        Unlike conventional solutions that focus only on preservation after harvest, ChitoChar Grow aims to reduce losses from the beginning by improving crop performance and helping produce maintain quality and freshness for longer periods after harvest.
-        \n**Key Benefits:**
-        * ✔ Improves soil health
-        * ✔ Enhances nutrient availability
-        * ✔ Supports root development
-        * ✔ Increases crop resilience to environmental stress
-        * ✔ Helps improve post-harvest quality and shelf life starting from the cultivation stage
-        * ✔ Promotes sustainable farming practices
-        * ✔ Converts waste into agricultural value
-        """)
+        st.write("ChitoChar Grow is a soil-enhancement solution developed from recycled bio-based materials and nutrient-rich agricultural residues. It is designed to improve soil quality, support plant growth, enhance crop resilience, and improve fruit quality before harvest.")
+        st.write("**Key Benefits:**\n* ✔ Improves soil health and nutrient availability\n* ✔ Enhances crop resilience to environmental stress\n* ✔ Helps improve post-harvest quality and shelf life starting from the cultivation stage")
         
     with st.expander("🤖 ChitoChar AI (Smart Shelf-Life & Loss Prediction Platform)"):
-        st.write("""
-        ChitoChar AI helps farmers, distributors, and food businesses make better storage and logistics decisions.
-        Using crop information, storage conditions, and environmental data, the platform predicts shelf life, estimates spoilage risk, and provides recommendations to reduce food loss and maximize product value across the supply chain.
-        \n**Key Features:**
-        * ✔ Shelf-life prediction
-        * ✔ Spoilage risk assessment
-        * ✔ Smart storage recommendations
-        * ✔ Economic savings estimation
-        * ✔ Sustainability impact tracking
-        * ✔ Product-specific guidance for ChitoChar solutions
-        """)
+        st.write("ChitoChar AI helps farmers, distributors, and food businesses make better storage and logistics decisions. Using crop information, storage conditions, and environmental data, the platform predicts shelf life, estimates spoilage risk, and provides recommendations to reduce food loss and maximize product value across the supply chain.")
         
     with st.expander("📖 Vision, Innovation Background & Milestones"):
-        st.write("""
-        Our startup is tackling one of the most critical challenges in global food systems: post-harvest food loss. Every year, a significant percentage of fresh fruits and vegetables are lost before reaching consumers due to rapid ripening, spoilage, and inefficient preservation methods. We are addressing this challenge through an innovative, sustainable, and science-driven solution that extends the shelf life of fresh produce while reducing environmental impact.
-        \nOur core innovation is a low-cost, eco-friendly active preservation sachet developed from bio-based and waste-derived materials. Unlike conventional preservation methods, our sachets do not come into direct contact with food. Instead, they are placed inside packaging or storage environments where they absorb ripening-related gases, helping slow the deterioration process and maintain product quality for longer periods. This provides a safer, more sustainable, and more affordable alternative to many imported chemical-based preservation solutions currently used in the market.
-        \nThe technology has already demonstrated strong results in laboratory testing. In one of our key trials, we successfully extended the shelf life of tomatoes from 6 days to 19 days at room temperature, highlighting the potential of the solution to significantly reduce food waste across the supply chain. Beyond tomatoes, the technology is designed to be adaptable for a wide range of fruits and vegetables, including highly perishable crops.
-        \nWhat makes our solution uniquely sustainable is its end-of-life cycle. Unlike many conventional pre
+        st.write("Our startup is tackling one of the most critical challenges in global food systems: post-harvest food loss. Every year, a significant percentage of fresh fruits and vegetables are lost before reaching consumers due to rapid ripening, spoilage, and inefficient preservation methods.")
+        st.write("Our core innovation is a low-cost, eco-friendly active preservation sachet developed from bio-based and waste-derived materials. Unlike conventional preservation methods, our sachets do not come into direct contact with food. Instead, they are placed inside packaging where they absorb ripening-related gases, helping slow the deterioration process.")
+        st.write("In one of our key trials, we successfully extended the shelf life of tomatoes from 6 days to 19 days at room temperature, highlighting the potential of the solution to significantly reduce food waste across the supply chain.")
+        st.write("Our journey has been accelerated through participation in the Ready for Tomorrow program delivered by Plan International, which helped us strengthen our business model and prepare for commercialization. We are currently working toward launching our first products and entering the market in early 2027.")
+        st.write("Our work has already gained international recognition, including winning Falling Walls Lab Cairo, organized by DAAD, for our breakthrough contribution to reducing food loss through sustainable packaging innovation.")
+
+# ==========================================
+# 🔥 END OF FILE - MAKE SURE THIS LINE IS COPIED 🔥
+# ==========================================
