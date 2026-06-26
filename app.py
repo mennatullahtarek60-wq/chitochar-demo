@@ -4,39 +4,9 @@ import pandas as pd
 # 1. Page Configuration
 st.set_page_config(page_title="ChitoChar Smart Dashboard", page_icon="🌱", layout="wide")
 
-# Custom CSS for perfect UI styling, branding, and text-based logo
+# Custom CSS for perfect UI styling and branding
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght=300;400;600;700&display=swap');
-* { font-family: 'Inter', sans-serif; }
-
-/* Custom Text Logo Styling to perfectly match original brand identity */
-.header-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 20px;
-    margin-top: -20px;
-}
-.logo-text-main {
-    font-size: 2.6rem;
-    font-weight: 700;
-    letter-spacing: -1px;
-    margin: 5px 0 0 0;
-    padding: 0;
-    line-height: 1.1;
-}
-.logo-chito { color: #1b2a4a; } /* Elegant Navy/Charcoal */
-.logo-char { color: #2D6A4F; }  /* Vivid Emerald Green */
-.logo-slogan {
-    font-size: 0.95rem;
-    color: #4B5563;
-    margin-top: 4px;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-}
-
 .product-tagline {
     font-size: 1.1rem;
     font-weight: bold;
@@ -73,26 +43,19 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# 2. Main Header & Custom Styled Logo Section
-st.markdown('<div class="header-container">', unsafe_allow_html=True)
-
-# Try loading the newly cropped icon. If not found, fall back safely.
+# 2. Main Header & Logo Section
 try:
-    st.image("logo_icon.png", width=70)
+    st.image("logo.png", width=250)
 except:
-    try:
-        st.image("logo.png", width=150)
-    except:
-        pass
+    st.title("ChitoChar")
+    st.subheader("Preserving Food, Restoring the Planet")
 
-# HTML Text Logo to perfectly replicate image branding with zero quality loss
-st.markdown("""
-    <div class="logo-text-main"><span class="logo-chito">Chito</span><span class="logo-char">Char</span></div>
-    <div class="logo-slogan">Preserving Food, Restoring the planet 🍃</div>
-</div>
-""", unsafe_allow_html=True)
+try:
+    st.image("hero_banner.png.jpg", use_container_width=True)
+except:
+    pass
 
-# Our Story Intro Section (Directly under the Custom Logo)
+# Our Story Intro Section
 st.markdown("""
 <div style="background-color: #F9F9F9; padding: 20px; border-left: 5px solid #2E7D32; border-radius: 4px; margin-bottom: 25px;">
     <h3 style="margin-top:0; color: #1B5E20;">🌱 Our Story</h3>
@@ -105,29 +68,6 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# Hero Image Banner Display (Directly under the Story)
-try:
-    st.image("hero_banner.jpg", use_container_width=True)
-except:
-    try:
-        st.image("hero_banner.png.jpg", use_container_width=True)
-    except:
-        pass
-
-st.write(" ")
-
-# --- DATA GENERATION ENGINE ---
-crop_data = {
-    "Tomatoes": {
-        "sensitivity": "Medium", "suitable": "✅ Yes",
-        "rt_normal": 6, "rt_chito": 24, "rt_risk": 42
-    },
-    "Bananas": {
-        "sensitivity": "High", "suitable": "✅ Yes",
-        "rt_normal": 5, "rt_chito": 19, "rt_risk": 65
-    }
-}
-
 # 3. Sidebar Layout (Controls & Smart AI Assistant)
 st.sidebar.header("⚙️ Control Panel")
 crop = st.sidebar.selectbox("Select Crop Type:", ["Tomatoes", "Bananas", "Strawberries", "Berries", "Grapes"])
@@ -137,13 +77,17 @@ shipment_size = st.sidebar.number_input("Shipment Size (kg):", min_value=1, valu
 st.sidebar.markdown("---")
 st.sidebar.subheader("🤖 Smart AI Assistant")
 
+# Sachet calculation logic simulation
 sachets_needed = int(shipment_size * 0.224)
 st.sidebar.info(f"💡 **Recommendation:** Deploy **{sachets_needed} Sachets** for this shipment size.")
 
 try:
-    st.sidebar.image("preserve_product.jpg", caption="ChitoChar Smart Sachet Prototype", use_container_width=True)
+    st.sidebar.image("sachet_product.png.jpg", caption="ChitoChar Smart Sachet Prototype", use_container_width=True)
 except:
-    pass
+    try:
+        st.sidebar.image("preserve_product.jpg", caption="ChitoChar Smart Sachet Prototype", use_container_width=True)
+    except:
+        pass
 
 # 4. Navigation Tabs
 tab1, tab2, tab3, tab4 = st.tabs([
