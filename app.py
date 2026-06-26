@@ -32,10 +32,7 @@ st.markdown("""
 # 1. Main Premium Logo Display
 st.image("logo.png", use_container_width=True)
 
-# 2. Hero Image Banner Display
-st.image("hero_banner.jpg", use_container_width=True)
-
-# 3. Our Story Section
+# 2. Our Story Section (Moved directly under the Logo)
 st.markdown("""
 <div class="story-box">
     <div class="story-title">🌱 Our Story</div>
@@ -48,6 +45,9 @@ st.markdown("""
     </div>
 </div>
 """, unsafe_allow_html=True)
+
+# 3. Hero Image Banner Display (Moved under the Story)
+st.image("hero_banner.jpg", use_container_width=True)
 
 st.write(" ")
 
@@ -317,7 +317,7 @@ with tab5:
         \n*Target Applications: berries, grapes, strawberries, fresh-cut produce, and other highly perishable fruits and vegetables.*
         """)
         
-    with st.expander("🌱 ChitoChar Grow"):
+        with st.expander("🌱 ChitoChar Grow"):
         st.markdown('<div class="product-tagline">Healthy Soil. Better Harvests.</div>', unsafe_allow_html=True)
         st.image("grow_product.jpg", width=350, caption="ChitoChar Grow Soil Solution")
         st.write("""
@@ -333,4 +333,38 @@ with tab5:
         * ✔ Promotes sustainable farming practices
         * ✔ Converts waste into agricultural value
         """)
-     
+        
+    with st.expander("🤖 ChitoChar AI"):
+        st.markdown('<div class="product-tagline">Predict. Protect. Preserve.</div>', unsafe_allow_html=True)
+        st.write("""
+        ChitoChar AI helps farmers, distributors, and food businesses make better storage and logistics decisions.
+        Using crop information, storage conditions, and environmental data, the platform predicts shelf life, estimates spoilage risk, and provides recommendations to reduce food loss and maximize product value across the supply chain.
+        \n**Key Features:**
+        * ✔ Shelf-life prediction
+        * ✔ Spoilage risk assessment
+        * ✔ Smart storage recommendations
+        * ✔ Economic savings estimation
+        * ✔ Sustainability impact tracking
+        * ✔ Product-specific guidance for ChitoChar solutions
+        """)
+        
+    with st.expander("♻️ Circular Impact"):
+        st.write("""
+        At ChitoChar, we believe waste should never be wasted.
+        Agricultural and biological waste are transformed into innovative solutions that help extend shelf life, reduce food loss, improve agricultural productivity, and support a circular economy.
+        \n**Agricultural Waste → Biochar Solutions → Longer Shelf Life → Reduced Food Loss → Improved Soil Health**
+        \n*Protect More Food. Waste Less. Grow Sustainably. 🌍*
+        """)
+        
+    with st.expander("📖 Vision, Innovation Background & Milestones"):
+        st.write("""
+        Our startup is tackling one of the most critical challenges in global food systems: post-harvest food loss. Every year, a significant percentage of fresh fruits and vegetables are lost before reaching consumers due to rapid ripening, spoilage, and inefficient preservation methods. We are addressing this challenge through an innovative, sustainable, and science-driven solution that extends the shelf life of fresh produce while reducing environmental impact.
+        \nOur core innovation is a low-cost, eco-friendly active preservation sachet developed from bio-based and waste-derived materials. Unlike conventional preservation methods, our sachets do not come into direct contact with food. Instead, they are placed inside packaging or storage environments where they absorb ripening-related gases, helping slow the deterioration process and maintain product quality for longer periods. This provides a safer, more sustainable, and more affordable alternative to many imported chemical-based preservation solutions currently used in the market.
+        \nThe technology has already documented strong results in laboratory testing. In one of our key trials, we successfully extended the shelf life of tomatoes from 6 days to 19 days at room temperature, highlighting the potential of the solution to significantly reduce food waste across the supply chain. Beyond tomatoes, the technology is designed to be adaptable for a wide range of fruits and vegetables, including highly perishable crops.
+        \nWhat makes our solution uniquely sustainable is its end-of-life cycle. Unlike many conventional preservation products that ultimately become waste, our sachets can be opened and their contents returned to the soil after use. The materials are rich in carbon and have the potential to contribute to soil improvement and circular resource utilization, transforming what would otherwise be waste into an additional environmental benefit.
+        \nIn addition to our post-harvest solution, we are also developing a complementary pre-harvest product derived from agricultural and biological waste streams. This material is inspired by promising scientific research and is currently under testing. Our goal is to enhance crop quality and longevity before harvest, creating a more comprehensive approach to reducing losses across the entire agricultural value chain.
+        \nTo maximize impact, we are also developing an AI-powered digital platform that will serve as a smart assistant for farmers, distributors, retailers, and consumers. The platform will help users predict produce shelf life, optimize storage conditions, receive personalized recommendations, and make data-driven decisions that reduce losses and improve efficiency.
+        \nOur journey has been accelerated through participation in the Ready for Tomorrow program delivered by Plan International, which helped us strengthen our business model, refine our market strategy, and prepare for commercialization. We are currently working toward launching our first products and entering the market in early 2027.
+        \nOur mission is to transform agricultural and food waste into high-value solutions that enhance food security, support sustainable agriculture, reduce economic losses, and contribute to a more resilient food system. By combining sustainability, biotechnology, materials innovation, and artificial intelligence, we aim to create scalable solutions capable of addressing food loss challenges both in Egypt and globally.
+        \nOur work has already gained international recognition, including winning Falling Walls Lab Cairo, organized by DAAD, for our breakthrough contribution to reducing food loss through sustainable packaging innovation.
+        """)
