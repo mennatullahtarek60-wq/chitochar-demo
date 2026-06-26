@@ -1,23 +1,14 @@
 import streamlit as st
 import pandas as pd
 
-# 1. Page Configuration (Eco-Friendly Leaf Icon)
-st.set_page_config(page_title="ChitoChar Smart Dashboard", page_icon="🌿", layout="wide")
+# 1. Page Configuration
+st.set_page_config(page_title="ChitoChar Smart Dashboard", page_icon="🌱", layout="wide")
 
-# Custom CSS for Full Environmental & Sustainable Green Theme (التحضر للأخضر)
+# Custom CSS for perfect UI styling, branding, and text-based logo
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght=300;400;600;700&display=swap');
 * { font-family: 'Inter', sans-serif; }
-
-/* Main App Background & Sidebar Styling for Eco-Vibe */
-.stApp {
-    background-color: #F7FAF8; /* Soft organic off-white */
-}
-[data-testid="stSidebar"] {
-    background-color: #EAF2EC !important; /* Beautiful pale sage green */
-    border-right: 1px solid #CADECE;
-}
 
 /* Custom Text Logo Styling to perfectly match original brand identity */
 .header-container {
@@ -25,68 +16,59 @@ st.markdown("""
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-bottom: 15px;
-    margin-top: -10px;
+    margin-bottom: 20px;
+    margin-top: -20px;
 }
 .logo-text-main {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
     font-weight: 700;
     letter-spacing: -1px;
     margin: 5px 0 0 0;
     padding: 0;
     line-height: 1.1;
 }
-.logo-chito { color: #1B2A4A; } /* Deep Corporate Navy */
-.logo-char { color: #2D6A4F; }  /* Deep Forest Green */
+.logo-chito { color: #1b2a4a; } /* Elegant Navy/Charcoal */
+.logo-char { color: #2D6A4F; }  /* Vivid Emerald Green */
 .logo-slogan {
-    font-size: 1rem;
-    color: #406343; /* Organic Olive Green */
-    margin-top: 6px;
+    font-size: 0.95rem;
+    color: #4B5563;
+    margin-top: 4px;
     font-weight: 500;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
 }
 
-/* Product Taglines inside expanders */
 .product-tagline {
     font-size: 1.1rem;
     font-weight: bold;
-    color: #1B5E20;
+    color: #2E7D32;
     margin-bottom: 15px;
     font-style: italic;
 }
-
-/* Sustainability Metric Boxes */
 .metric-box {
-    background-color: #E8F5E9; /* Light Mint Green */
+    background-color: #F4FBF7;
     padding: 20px;
-    border-radius: 12px;
-    border: 1px solid #A5D6A7;
+    border-radius: 10px;
+    border: 1px solid #C8E6C9;
     text-align: center;
     margin-bottom: 15px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 }
 .metric-title {
     font-size: 0.9rem;
-    color: #2E7D32;
+    color: #555;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: bold;
 }
 .metric-value {
-    font-size: 1.9rem;
+    font-size: 1.8rem;
     font-weight: bold;
     color: #1B5E20;
     margin-top: 5px;
 }
 .metric-sub {
     font-size: 0.85rem;
-    color: #558B2F;
+    color: #777;
     margin-top: 5px;
-}
-
-/* Customizing Tabs to match the green theme */
-div[data-testid="stMarkdownContainer"] p {
-    color: #2C3E2B;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -94,24 +76,27 @@ div[data-testid="stMarkdownContainer"] p {
 # 2. Main Header & Custom Styled Logo Section
 st.markdown('<div class="header-container">', unsafe_allow_html=True)
 
-# Smooth loading for the logo (Checks for logo.png first, scales it cleanly)
+# Try loading the newly cropped icon. If not found, fall back safely.
 try:
-    st.image("logo.png", width=110)
+    st.image("logo_icon.png", width=70)
 except:
-    pass
+    try:
+        st.image("logo.png", width=150)
+    except:
+        pass
 
-# HTML Text Logo to replicate image branding with zero vertical space waste
+# HTML Text Logo to perfectly replicate image branding with zero quality loss
 st.markdown("""
     <div class="logo-text-main"><span class="logo-chito">Chito</span><span class="logo-char">Char</span></div>
-    <div class="logo-slogan">Preserving Food, Restoring the Planet 🍃</div>
+    <div class="logo-slogan">Preserving Food, Restoring the planet 🍃</div>
 </div>
 """, unsafe_allow_html=True)
 
-# Our Story Intro Section (Beautiful Green Border)
+# Our Story Intro Section (Directly under the Custom Logo)
 st.markdown("""
-<div style="background-color: #E8F5E9; padding: 22px; border-left: 6px solid #2D6A4F; border-radius: 8px; margin-bottom: 25px;">
-    <h3 style="margin-top:0; color: #1B5E20; font-weight:700;">🌱 Our Story</h3>
-    <p style="font-size: 1.05rem; color: #2D3E2E; line-height: 1.6; margin-bottom:0;">
+<div style="background-color: #F9F9F9; padding: 20px; border-left: 5px solid #2E7D32; border-radius: 4px; margin-bottom: 25px;">
+    <h3 style="margin-top:0; color: #1B5E20;">🌱 Our Story</h3>
+    <p style="font-size: 1.05rem; color: #333; line-height: 1.6;">
         Every year, millions of tons of fresh fruits and vegetables are lost before they ever reach a consumer's table, 
         while millions of tons of agricultural waste are burned or discarded. At ChitoChar, we asked ourselves how we could bridge this gap. 
         By upcycling biological and agricultural waste streams into active preservation solutions and pre-harvest updates, 
@@ -120,7 +105,7 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# The Circular Smart Ecosystem Banner (Right below the story - Visual Masterpiece!)
+# Hero Image Banner Display (Directly under the Story)
 try:
     st.image("hero_banner.jpg", use_container_width=True)
 except:
@@ -133,24 +118,27 @@ st.write(" ")
 
 # --- DATA GENERATION ENGINE ---
 crop_data = {
-    "Tomatoes": {"rt_normal": 6, "rt_chito": 24},
-    "Bananas": {"rt_normal": 5, "rt_chito": 19},
-    "Strawberries": {"rt_normal": 3, "rt_chito": 10},
-    "Berries": {"rt_normal": 4, "rt_chito": 12},
-    "Grapes": {"rt_normal": 7, "rt_chito": 21}
+    "Tomatoes": {
+        "sensitivity": "Medium", "suitable": "✅ Yes",
+        "rt_normal": 6, "rt_chito": 24, "rt_risk": 42
+    },
+    "Bananas": {
+        "sensitivity": "High", "suitable": "✅ Yes",
+        "rt_normal": 5, "rt_chito": 19, "rt_risk": 65
+    }
 }
 
-# 3. Sidebar Layout (Eco-Styling Control Panel)
-st.sidebar.markdown("<h2 style='color: #1B5E20; margin-top:0;'>⚙️ Control Panel</h2>", unsafe_allow_html=True)
-crop = st.sidebar.selectbox("Select Crop Type:", list(crop_data.keys()))
+# 3. Sidebar Layout (Controls & Smart AI Assistant)
+st.sidebar.header("⚙️ Control Panel")
+crop = st.sidebar.selectbox("Select Crop Type:", ["Tomatoes", "Bananas", "Strawberries", "Berries", "Grapes"])
 temp = st.sidebar.slider("Storage/Transit Temperature (°C):", min_value=-5, max_value=40, value=5)
 shipment_size = st.sidebar.number_input("Shipment Size (kg):", min_value=1, value=500)
 
 st.sidebar.markdown("---")
-st.sidebar.markdown("<h3 style='color: #1B5E20;'>🤖 Smart AI Assistant</h3>", unsafe_allow_html=True)
+st.sidebar.subheader("🤖 Smart AI Assistant")
 
 sachets_needed = int(shipment_size * 0.224)
-st.sidebar.success(f"💡 **Recommendation:** Deploy **{sachets_needed} Sachets** for this shipment size.")
+st.sidebar.info(f"💡 **Recommendation:** Deploy **{sachets_needed} Sachets** for this shipment size.")
 
 try:
     st.sidebar.image("preserve_product.jpg", caption="ChitoChar Smart Sachet Prototype", use_container_width=True)
@@ -173,28 +161,27 @@ with tab1:
     
     with col1:
         st.markdown("""
-        <div class="metric-box" style="border: 2px solid #FFB74D; background-color: #FFF3E0;">
-            <div class="metric-title" style="color: #E65100;">Spoilage Risk Score</div>
+        <div class="metric-box" style="border: 2px solid #FFB74D;">
+            <div class="metric-title">Spoilage Risk Score</div>
             <div class="metric-value" style="color: #E65100;">42%</div>
-            <div class="metric-sub" style="color: #BF360C; font-weight: bold;">Medium Level</div>
+            <div class="metric-sub" style="background-color: #FFF3E0; padding: 4px 10px; border-radius: 10px; display: inline-block; color: #E65100; font-weight: bold;">Medium Level</div>
         </div>
         """, unsafe_allow_html=True)
         
     with col2:
-        st.markdown(f"""
+        st.markdown("""
         <div class="metric-box">
             <div class="metric-title">⏳ Expected Range (Shelf Life)</div>
-            <div class="metric-value">{crop_data[crop]['rt_normal']} - {crop_data[crop]['rt_chito']} Days</div>
-            <div class="metric-sub">Predicted Shelf Life: Up to {crop_data[crop]['rt_chito']} Days</div>
+            <div class="metric-value">18 - 24 Days</div>
+            <div class="metric-sub">Predicted Shelf Life: Up to 24 Days</div>
         </div>
         """, unsafe_allow_html=True)
         
     with col3:
-        days_saved = crop_data[crop]['rt_chito'] - crop_data[crop]['rt_normal']
-        st.markdown(f"""
-        <div class="metric-box" style="background-color: #E8F5E9; border: 1px solid #81C784;">
+        st.markdown("""
+        <div class="metric-box">
             <div class="metric-title">📦 Days Saved Counter</div>
-            <div class="metric-value" style="color: #2E7D32;">+{days_saved} Days Saved</div>
+            <div class="metric-value" style="color: #2E7D32;">+6 Days Saved</div>
             <div class="metric-sub">Ethylene Sensitivity: <b>High</b></div>
         </div>
         """, unsafe_allow_html=True)
@@ -202,7 +189,7 @@ with tab1:
     st.subheader("📅 Shelf Life Visualization Breakdown")
     chart_data = pd.DataFrame({
         'Condition': ['Control (No Sachet)', 'With ChitoChar Sachet'],
-        'Days Fresh': [crop_data[crop]['rt_normal'], crop_data[crop]['rt_chito']]
+        'Days Fresh': [6, 24 if crop == "Tomatoes" else 19]
     })
     st.bar_chart(chart_data.set_index('Condition'))
 
@@ -216,7 +203,7 @@ with tab2:
     st.success("📊 **The ChitoChar Loop:**\nAgricultural Waste ➔ Biochar Solutions ➔ Longer Shelf Life ➔ Reduced Food Loss ➔ Improved Soil Health")
     st.markdown("<p style='text-align: center; font-style: italic; font-weight: bold; color: #2E7D32; margin-top: 30px;'>Protect More Food. Waste Less. Grow Sustainably. 🌍</p>", unsafe_allow_html=True)
 
-# --- TAB 3: SOLUTIONS ECOSYSTEM (FIXED TYPO & INDENTATION) ---
+# --- TAB 3: SOLUTIONS ECOSYSTEM ---
 with tab3:
     st.header("ChitoChar Solutions Portfolio")
     st.caption("Transforming agricultural waste into smart solutions for food preservation and sustainable agriculture.")
@@ -230,6 +217,14 @@ with tab3:
         st.write("""
         ChitoChar Preserve is a biochar-based active preservation sachet designed for post-harvest protection. 
         The sachets are placed inside storage or packaging environments to absorb ripening gases and slow down spoilage.
+        \n**Key Benefits:**
+        * ✔ Helps extend produce freshness
+        * ✔ Reduces post-harvest losses
+        * ✔ No direct food contact
+        * ✔ Low-cost and easy to use
+        * ✔ Made from upcycled agricultural waste
+        * ✔ Suitable for tomatoes, bananas, and a wide variety of fresh items
+        * ♻ *After use, the biochar contents can be directly added to soil to act as an amendment.*
         """)
 
     with st.expander("📦 ChitoChar Shield (Active Biochar Carton Liners - Future Product)"):
@@ -239,7 +234,16 @@ with tab3:
         except:
             pass
         st.write("""
-        ChitoChar Shield is an advanced active-packaging solution integrating biochar properties directly into container and box liners.
+        ChitoChar Shield is an advanced active-packaging solution integrating biochar properties directly into container and box liners. 
+        The carton liners are manufactured from biochar composites to control storage conditions during long-distance shipping.
+        \n**Key Benefits:**
+        * ✔ Helps extend shelf life of highly perishable crops
+        * ✔ Reduces spoilage during transportation and transit
+        * ✔ Natural antimicrobial properties
+        * ✔ Helps manage ripening-related gases
+        * ✔ Suitable for export packaging and sensitive produce
+        * ✔ Sustainable alternative to conventional plastic-based liners
+        \n**Target Applications:** Berries, grapes, strawberries, and premium export fruits.
         """)
 
     with st.expander("🌱 ChitoChar Grow (Sustainable Soil Amendment for Pre-Harvest Improvement)"):
@@ -250,12 +254,43 @@ with tab3:
             pass
         st.write("""
         ChitoChar Grow is a soil-enhancement solution developed from recycled bio-based materials and nutrient-rich agricultural residues.
+        It is designed to improve soil quality, support plant growth, enhance crop resilience, and improve fruit quality before harvest.
+        Unlike conventional solutions that focus only on preservation after harvest, ChitoChar Grow aims to reduce losses from the beginning by improving crop performance and helping produce maintain quality and freshness for longer periods after harvest.
+        \n**Key Benefits:**
+        * ✔ Improves soil health
+        * ✔ Enhances nutrient availability
+        * ✔ Supports root development
+        * ✔ Increases crop resilience to environmental stress
+        * ✔ Helps improve post-harvest quality and shelf life starting from the cultivation stage
+        * ✔ Promotes sustainable farming practices
+        * ✔ Converts waste into agricultural value
         """)
         
     with st.expander("🤖 ChitoChar AI (Smart Shelf-Life & Loss Prediction Platform)"):
         st.markdown('<div class="product-tagline">Predict. Protect. Preserve.</div>', unsafe_allow_html=True)
         st.write("""
         ChitoChar AI helps farmers, distributors, and food businesses make better storage and logistics decisions.
+        Using crop information, storage conditions, and environmental data, the platform predicts shelf life, estimates spoilage risk, and provides recommendations to reduce food loss and maximize product value across the supply chain.
+        \n**Key Features:**
+        * ✔ Shelf-life prediction
+        * ✔ Spoilage risk assessment
+        * ✔ Smart storage recommendations
+        * ✔ Economic savings estimation
+        * ✔ Sustainability impact tracking
+        * ✔ Product-specific guidance for ChitoChar solutions
+        """)
+
+    with st.expander("📖 Vision, Innovation Background & Milestones"):
+        st.write("""
+        Our startup is tackling one of the most critical challenges in global food systems: post-harvest food loss. Every year, a significant percentage of fresh fruits and vegetables are lost before reaching consumers due to rapid ripening, spoilage, and inefficient preservation methods. We are addressing this challenge through an innovative, sustainable, and science-driven solution that extends the shelf life of fresh produce while reducing environmental impact.
+        \nOur core innovation is a low-cost, eco-friendly active preservation sachet developed from bio-based and waste-derived materials. Unlike conventional preservation methods, our sachets do not come into direct contact with food. Instead, they are placed inside packaging or storage environments where they absorb ripening-related gases, helping slow the deterioration process and maintain product quality for longer periods. This provides a safer, more sustainable, and more affordable alternative to many imported chemical-based preservation solutions currently used in the market.
+        \nThe technology has already documented strong results in laboratory testing. In one of our key trials, we successfully extended the shelf life of tomatoes from 6 days to 19 days at room temperature, highlighting the potential of the solution to significantly reduce food waste across the supply chain. Beyond tomatoes, the technology is designed to be adaptable for a wide range of fruits and vegetables, including highly perishable crops.
+        \nWhat makes our solution uniquely sustainable is its end-of-life cycle. Unlike many conventional preservation products that ultimately become waste, our sachets can be opened and their contents returned to the soil after use. The materials are rich in carbon and have the potential to contribute to soil improvement and circular resource utilization, transforming what would otherwise be waste into an additional environmental benefit.
+        \nIn addition to our post-harvest solution, we are also developing a complementary pre-harvest product derived from agricultural and biological waste streams. This material is inspired by promising scientific research and is currently under testing. Our goal is to enhance crop quality and longevity before harvest, creating a more comprehensive approach to reducing losses across the entire agricultural value chain.
+        \nTo maximize impact, we are also developing an AI-powered digital platform that will serve as a smart assistant for farmers, distributors, retailers, and consumers. The platform will help users predict produce shelf life, optimize storage conditions, receive personalized recommendations, and make data-driven decisions that reduce losses and improve efficiency.
+        \nOur journey has been accelerated through participation in the Ready for Tomorrow program delivered by Plan International, which helped us strengthen our business model, refine our market strategy, and prepare for commercialization. We are currently working toward launching our first products and entering the market in early 2027.
+        \nOur mission is to transform agricultural and food waste into high-value solutions that enhance food security, support sustainable agriculture, reduce economic losses, and contribute to a more resilient food system. By combining sustainability, biotechnology, materials innovation, and artificial intelligence, we aim to create scalable solutions capable of addressing food loss challenges both in Egypt and globally.
+        \nOur work has already gained international recognition, including winning Falling Walls Lab Cairo, organized by DAAD, for our breakthrough contribution to reducing food loss through sustainable packaging innovation.
         """)
 
 # --- TAB 4: NATIONAL IMPACT SIMULATOR ---
@@ -269,4 +304,4 @@ with tab4:
     c1, c2 = st.columns(2)
     c1.metric("💰 Economic Value Retained", f"${money_saved:,}")
     c2.metric("📉 CO2 Emissions Reduced", f"{co2_offset:,} Tons CO2e")
-        
+    
