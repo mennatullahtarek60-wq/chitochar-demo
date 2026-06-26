@@ -317,7 +317,7 @@ with tab5:
         \n*Target Applications: berries, grapes, strawberries, fresh-cut produce, and other highly perishable fruits and vegetables.*
         """)
         
-        with st.expander("🌱 ChitoChar Grow"):
+    with st.expander("🌱 ChitoChar Grow"):
         st.markdown('<div class="product-tagline">Healthy Soil. Better Harvests.</div>', unsafe_allow_html=True)
         st.image("grow_product.jpg", width=350, caption="ChitoChar Grow Soil Solution")
         st.write("""
